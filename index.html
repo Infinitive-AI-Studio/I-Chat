@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Infinitive Chat</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Username Prompt -->
+  <div class="username-screen" id="username-screen">
+    <div class="username-box">
+      <h2>Enter your name</h2>
+      <input type="text" id="username-input" placeholder="Your name" required />
+      <button class="join-btn" onclick="enterChat()">Join Chat</button>
+    </div>
+  </div>
+
+  <!-- Chat UI -->
+  <div class="chat-container" id="chat-container" style="display:none;">
+    <div class="chat-header">
+      <span id="user-count">🟢 0 users online</span>
+    </div>
+    <div class="chat-box" id="chat-box"></div>
+    
+    <!-- Image Preview -->
+    <div class="image-preview" id="image-preview" style="display:none;">
+      <img id="preview-img" />
+      <button id="remove-preview">✕</button>
+    </div>
+    
+    <form id="chat-form">
+      <label class="attach-btn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19.5 14.25V11.625C19.5 9.76104 17.989 8.25 16.125 8.25H14.625C14.0037 8.25 13.5 7.74632 13.5 7.125V5.625C13.5 3.76104 11.989 2.25 10.125 2.25H8.25M8.25 15H15.75M8.25 10.5H12M10.5 21.75H5.625C5.00368 21.75 4.5 21.2463 4.5 20.625V5.625C4.5 4.25368 5.62868 3.125 7 3.125H17.375C17.9963 3.125 18.5 3.62868 18.5 4.25V9.5" stroke="#1877f2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <input type="file" id="file-input" accept="image/*" />
+      </label>
+      <input type="text" id="msg" placeholder="Type a message..." autocomplete="off" required />
+      <button type="submit">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M22 2L11 13M22 2L15 22L11 13L2 9L22 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <!-- Image Viewer Popup -->
+  <div class="popup" id="image-popup">
+    <div class="popup-content">
+      <span id="popup-close">&times;</span>
+      <img id="popup-img" />
+      <a id="popup-download" download target="_blank">Download</a>
+    </div>
+  </div>
+
+  <script src="client.js"></script>
+</body>
+</html>
